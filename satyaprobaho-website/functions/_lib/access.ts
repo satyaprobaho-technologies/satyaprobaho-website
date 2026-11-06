@@ -17,7 +17,7 @@ export async function verifyAdmin(request: Request, env: AccessEnv): Promise<Acc
   const response = await fetch(`${issuer}/cdn-cgi/access/certs`, { cf: { cacheTtl: 300 } } as RequestInit); if (!response.ok) return null;
   const certs = await response.json() as { keys?: (JsonWebKey & { kid?: string })[] }; const jwk = certs.keys?.find(k => k.kid === header.kid); if (!jwk) return null;
   const key = await crypto.subtle.importKey("jwk", jwk, { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" }, false, ["verify"]);
-  const valid = await crypto.subtle.verify("RSASSA-PKCS1-v1_5", key, decodePart(parts[2]), enc.encode(`${parts[0]}.${parts[1]}`)); if (!valid) return null;
+  const valid = await crypto.subtle.verify("RSASSA-PKCS1-v1_5", key, decodePart(parts[2]) as BufferSource, enc.encode(`${parts[0]}.${parts[1]}`) as BufferSource); if (!valid) return null;
   return { email: claims.email, name: typeof claims.name === "string" ? claims.name : undefined };
  } catch { return null; }
 }
