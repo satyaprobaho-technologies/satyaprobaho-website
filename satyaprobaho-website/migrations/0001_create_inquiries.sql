@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS inquiries (
-  id TEXT PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,
   email TEXT NOT NULL,
   service TEXT NOT NULL CHECK (service IN ('domain', 'web-hosting', 'vps', 'reseller', 'general')),
