@@ -1,28 +1,37 @@
-# SATYAPROBAHO TECHNOLOGIES — pre-launch website
+# SATYAPROBAHO TECHNOLOGIES — website
 
-Next.js static-export starter for a planned domain-registration and web-hosting business. The content is intentionally transparent that paid services are not live.
+Next.js static-export website for the planned domain-registration and web-hosting business.
+
+## Current website status
+- Source repository: https://github.com/satyaprobaho-technologies/satyaprobaho-website
+- Production Pages project: https://satyaprobaho-website.pages.dev
+- Latest deployment URL previously confirmed in the Cloudflare dashboard: https://fcc5e9a5.satyaprobaho-website.pages.dev
+- GitHub Actions site build: successful on 2026-11-06 (run 42179019930).
+- Static pages include home, domain registration, web hosting, VPS hosting, reseller hosting, about, contact, terms, privacy and refund policy.
+- Static website hosting on Cloudflare Pages is the currently available free hosting layer. It is not a customer hosting server or a VPS.
 
 ## Run locally
 - Install Node.js LTS.
-- Run `npm install`, then `npm run dev`.
-- Run `npm run build` to create the static `out/` directory.
+- Run `npm install`.
+- Run `npm run dev` for local development.
+- Run `npm run build` to generate the static `out/` directory.
 
-## Before deployment
-1. Create a GitHub repository and upload this folder. The connected GitHub account currently has no repositories visible to the integration; repository creation is not supported by the available GitHub actions.
-2. Create a Cloudflare Pages project and connect the GitHub repository, or upload the generated `out/` directory.
-3. Set `NEXT_PUBLIC_SITE_URL` to the actual public Pages URL, e.g. `https://YOUR-PROJECT.pages.dev`. Do not use the planned `satyaprobaho.com` until it is purchased and configured.
-4. Replace/update company contact details, verify legal pages, and add an actual customer support channel before launch.
-5. Verify the live site, sitemap and robots.txt; then add the site to Google Search Console and submit the sitemap. Indexing and rankings are not guaranteed.
+## Business launch blockers — do not accept orders yet
+- `satyaprobaho.com` is a planned domain; purchase and DNS configuration have not been confirmed.
+- No Singapore VPS has been provisioned. No server IP, root/SSH login, or HestiaCP administrator login exists.
+- No registrar/reseller account or domain-registration API is connected.
+- No customer hosting/reseller infrastructure, customer portal, payment gateway, or automated provisioning is implemented.
+- No domain, web-hosting, VPS or reseller products are currently available for fulfillment. Do not accept payments or promise delivery until fulfillment is operational.
+- Terms, privacy and refund pages are starter drafts and require business-specific and legal review before commercial launch.
+- Business contact details, support address, pricing, legal entity and registration details must be supplied and verified; none should be fabricated.
 
-## Important status
-- `satyaprobaho.com` is a planned domain, not confirmed as purchased or available.
-- No VPS has been provisioned; Singapore is the preferred future location.
-- HestiaCP is a planned future control panel.
-- No domain registration, hosting, VPS or reseller packages are currently sold.
-- No payment gateway, customer portal or automated provisioning is implemented.
-- Privacy, terms and refund pages are starter drafts and require business-specific/legal review.
-- No business email, phone number, street address, pricing or company registration details have been invented.
-- This archive has not been built or deployed in this environment.
+## Next steps when resources are available
+1. Purchase and configure the business domain, or continue using the free Pages subdomain.
+2. Obtain a suitable Singapore VPS under an explicitly approved budget and provider terms.
+3. Install and secure HestiaCP on a fresh supported OS; then verify panel access, DNS, mail and backups.
+4. Select a legitimate registrar/reseller provider and connect its API.
+5. Configure customer ordering, payment processing, support and fulfillment.
+6. Review legal policies, test an end-to-end order, then launch paid services.
 
-## Environment
-Set `NEXT_PUBLIC_SITE_URL` at build time to the canonical public URL. It controls metadata base, sitemap and robots sitemap reference.
+## Important
+The current site is a public informational/pre-launch website. A successful static-site build does not mean domain sales, hosting fulfillment, or VPS operations are live. Search indexing and ranking are not guaranteed.
