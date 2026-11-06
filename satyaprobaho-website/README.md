@@ -52,3 +52,25 @@ The selected alternative is to keep the public website on **Cloudflare Pages** a
 ## Deployment verification
 
 A successful GitHub Actions build confirms that the source builds; it does not by itself prove that the latest Cloudflare production deployment is live. The repository's current GitHub Actions workflow runs a build only; it does not deploy to Cloudflare. Cloudflare Pages must be configured with the app root directory `satyaprobaho-website`, build command `npm run build`, and output directory `out`. Pages Functions are discovered from the app root's `functions/` directory. Verify the current deployment in the Cloudflare Pages dashboard and test `/api/health` after deployment. Search indexing and ranking are not guaranteed.
+
+
+## Pre-launch enquiries (Cloudflare D1)
+
+The contact page includes a pre-launch enquiry form. It is **not an order form** and must not be used to accept payment or promise service delivery.
+
+To enable persistent enquiry storage in Cloudflare Pages:
+
+1. In Cloudflare Dashboard, open Workers & Pages → D1 SQL Database and create a database named `satyaprobaho-inquiries` (Free plan only; do not select a paid plan).
+2. Open the database's Console and execute the SQL in `migrations/0001_create_inquiries.sql`.
+3. Open Workers & Pages → `satyaprobaho-website` → Settings → Functions → D1 database bindings.
+4. Add a binding with variable name `DB` and select `satyaprobaho-inquiries`.
+5. Save and trigger a new production deployment. No API key or database password belongs in the repository.
+6. Test the contact form with a non-sensitive test enquiry. Confirm a 201 response and verify the row in the D1 Console. Delete the test row afterwards.
+
+Until the D1 binding is configured, `POST /api/inquiries` intentionally returns HTTP 503 and the form displays a clear setup message. Do not say enquiries are being stored before the test succeeds.
+
+The API validates fields, limits lengths, checks the request origin, uses a honeypot, and stores only name, email, service, message, status and timestamp. It does not store IP addresses. Restrict D1 dashboard access to trusted administrators. Add rate limiting/Turnstile before public launch if abuse becomes a concern.
+
+### D1 migration
+
+Apply `migrations/0001_create_inquiries.sql` once to the production D1 database before binding it.
