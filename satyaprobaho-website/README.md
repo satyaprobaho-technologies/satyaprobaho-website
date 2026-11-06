@@ -20,6 +20,7 @@ The selected alternative is to keep the public website on **Cloudflare Pages** a
 
 - Public informational pages: home, domain registration, web hosting, VPS hosting, reseller hosting, about, contact, terms, privacy and refund policy.
 - Free Pages subdomain for the informational website.
+- A Cloudflare Pages Function source file at `functions/api/health.ts` defines a JSON health endpoint at `/api/health`; it becomes live only after a successful Pages deployment that includes the `functions/` directory.
 - Educational content to help visitors understand domains and hosting options.
 
 ## What is NOT available — do not accept orders or payments
@@ -50,4 +51,4 @@ The selected alternative is to keep the public website on **Cloudflare Pages** a
 
 ## Deployment verification
 
-A successful GitHub Actions build confirms that the source builds; it does not by itself prove that the latest Cloudflare production deployment is live. Verify the current deployment in the Cloudflare Pages dashboard after each release. Search indexing and ranking are not guaranteed.
+A successful GitHub Actions build confirms that the source builds; it does not by itself prove that the latest Cloudflare production deployment is live. The repository's current GitHub Actions workflow runs a build only; it does not deploy to Cloudflare. Cloudflare Pages must be configured with the app root directory `satyaprobaho-website`, build command `npm run build`, and output directory `out`. Pages Functions are discovered from the app root's `functions/` directory. Verify the current deployment in the Cloudflare Pages dashboard and test `/api/health` after deployment. Search indexing and ranking are not guaranteed.
