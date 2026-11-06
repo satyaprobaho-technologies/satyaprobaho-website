@@ -1,6 +1,12 @@
+interface D1Result {
+  meta?: {
+    last_row_id?: number;
+  };
+}
+
 interface D1Database {
   prepare(query: string): {
-    bind(...values: unknown[]): { run(): Promise<unknown> };
+    bind(...values: unknown[]): { run(): Promise<D1Result> };
   };
 }
 
@@ -74,17 +80,22 @@ export const onRequestPost = async ({ request, env }: PagesContext): Promise<Res
     return json({ ok: false, error: "Please check the required fields and consent." }, 400);
   }
 
-  const id = crypto.randomUUID();
   try {
-    await env.DB.prepare(
-      "INSERT INTO inquiries (id, name, email, service, message, status, created_at) VALUES (?, ?, ?, ?, ?, 'new', CURRENT_TIMESTAMP)",
-    ).bind(id, name, email, service, message).run();
+    // The production D1 schema uses INTEGER PRIMARY KEY AUTOINCREMENT.
+    // Let SQLite generate the ID instead of inserting a UUID into that column.
+    const result = await env.DB.prepare(
+      "INSERT INTO inquiries (name, email, service, message, status, created_at) VALUES (?, ?, ?, ?, 'new', CURRENT_TIMESTAMP)",
+    ).bind(name, email, service, message).run();
+
+    return json(
+      {
+        ok: true,
+        reference: result.meta?.last_row_id ?? null,
+        message: "Your enquiry has been received. We will publish verified support contact details before commercial launch.",
+      },
+      201,
+    );
   } catch {
     return json({ ok: false, error: "We could not save your enquiry. Please try again later." }, 500);
   }
-
-  return json(
-    { ok: true, reference: id, message: "Your enquiry has been received. We will publish verified support contact details before commercial launch." },
-    201,
-  );
 };
