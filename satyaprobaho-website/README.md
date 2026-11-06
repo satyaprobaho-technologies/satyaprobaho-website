@@ -7,7 +7,7 @@ Next.js static-export website for SATYAPROBAHO TECHNOLOGIES.
 The selected alternative is to keep the public website on **Cloudflare Pages** and operate it as a transparent information/pre-launch website. A VPS is not required to serve this static website.
 
 - Public Pages project: https://satyaprobaho-website.pages.dev
-- Previously confirmed production deployment URL: https://fcc5e9a5.satyaprobaho-website.pages.dev
+- Historical deployment preview URL recorded during setup: `https://fcc5e9a5.satyaprobaho-website.pages.dev` (not independently verified as the current production deployment).
 - Source repository: https://github.com/satyaprobaho-technologies/satyaprobaho-website
 - Framework: Next.js static export
 - Deployment source: GitHub repository, branch main (Cloudflare Pages connection was previously configured)
