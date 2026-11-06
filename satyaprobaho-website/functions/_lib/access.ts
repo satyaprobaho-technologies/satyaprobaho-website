@@ -9,7 +9,7 @@ export async function verifyAdmin(request: Request, env: AccessEnv): Promise<Acc
  try {
   const parts = assertion.split("."); if (parts.length !== 3) return null;
   const header = decodeJson(parts[0]); const claims = decodeJson(parts[1]); const now = Math.floor(Date.now()/1000);
-  const team = env.ACCESS_TEAM_DOMAIN.replace(/^https?:\\/\\//, "").replace(/\\/$/, ""); const issuer = `https://${team}`;
+  const team = env.ACCESS_TEAM_DOMAIN.split("://").pop()?.replaceAll("/", "") || ""; const issuer = `https://${team}`;
   if (header.alg !== "RS256" || typeof header.kid !== "string") return null;
   if (claims.iss !== issuer || !Array.isArray(claims.aud) || !claims.aud.includes(env.ACCESS_AUD)) return null;
   if (typeof claims.exp !== "number" || claims.exp <= now || (typeof claims.nbf === "number" && claims.nbf > now+60)) return null;
