@@ -1,5 +1,5 @@
 import { verifyAdmin, type AccessEnv } from "../../_lib/access";
-interface Statement { bind(...values: unknown[]): { all<T>(): Promise<{ results?: T[] }> }; }
+interface Statement { all<T>(): Promise<{ results?: T[] }>; bind(...values: unknown[]): { run(): Promise<unknown> }; }
 interface DB { prepare(sql:string): Statement; }
 interface Env extends AccessEnv { DB?: DB; }
 interface Context { request:Request; env:Env; }
@@ -16,6 +16,6 @@ export const onRequestPatch=async({request,env}:Context):Promise<Response>=>{
  let body:{id?:unknown;status?:unknown}; try{body=await request.json() as typeof body;}catch{return json({ok:false,error:"Invalid JSON."},400);}
  const id=Number(body.id); const status=body.status;
  if(!Number.isSafeInteger(id)||id<1||!["new","in_progress","resolved","spam"].includes(String(status))) return json({ok:false,error:"Invalid enquiry ID or status."},400);
- try { await env.DB.prepare("UPDATE inquiries SET status=? WHERE id=?").bind(status,id).all(); return json({ok:true}); }
+ try { await env.DB.prepare("UPDATE inquiries SET status=? WHERE id=?").bind(status,id).run(); return json({ok:true}); }
  catch { return json({ok:false,error:"Could not update enquiry."},500); }
 };
