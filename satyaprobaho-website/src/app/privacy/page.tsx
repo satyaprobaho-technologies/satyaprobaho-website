@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy information for the SATYAPROBAHO TECHNOLOGIES pre-launch website and enquiry form.",
+  description: "Privacy information for the NEXORA INTERNATIONAL TECHNOLOGY pre-launch website and enquiry form.",
 };
 
 export default function Page() {
