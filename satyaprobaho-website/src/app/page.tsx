@@ -14,7 +14,7 @@ export default function Home() {
         <div className="container hero-content">
           <span className="eyebrow">Digital services · Bangladesh</span>
           <h1>Build your online presence with <span>clarity and confidence.</span></h1>
-          <p>SATYAPROBAHO TECHNOLOGIES shares practical guidance on domain names, web hosting and server solutions. Learn the essentials, compare your options and make informed decisions for your next online project.</p>
+          <p>NEXORA INTERNATIONAL TECHNOLOGY is preparing global-ready digital services, including domain registration, web hosting, VPS and reseller hosting. Explore our information resources and follow launch updates while our fulfilment systems are being prepared.</p>
           <div className="hero-actions">
             <Link className="btn" href="/domain-registration">Explore services <span>→</span></Link>
             <Link className="btn secondary" href="/about">About our company</Link>
