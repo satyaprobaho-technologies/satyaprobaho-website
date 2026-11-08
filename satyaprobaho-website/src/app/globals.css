@@ -34,3 +34,7 @@ body>div main.wrap.section{padding-block:64px}main.wrap.section>h1{font-family:M
 .inquiry-error{background:#fff0ef;color:#9b2c25}
 .inquiry-note{font-size:12px;margin-top:20px}
 @media(max-width:640px){.inquiry-form{grid-template-columns:1fr}.inquiry-form .inquiry-consent{grid-column:auto}.inquiry-form button{width:100%}}
+
+
+/* NEXORA approved globe identity */
+.brand-logo{display:block;width:48px;height:46px;object-fit:contain;flex:0 0 auto}.brand-copy{font-size:16px;letter-spacing:.08em}.brand-copy small{font-size:8px;letter-spacing:.16em;white-space:nowrap}
