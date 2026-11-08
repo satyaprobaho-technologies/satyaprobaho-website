@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <footer className="site-footer">
           <div className="container footer-grid">
-            <div className="footer-brand"><Link className="brand brand-light" href="/"><span className="brand-mark">S</span><span className="brand-copy">SATYAPROBAHO<small>TECHNOLOGIES</small></span></Link><p>Clear information for domains, hosting and your digital journey.</p><span className="footer-note">Bangladesh · Pre-launch</span></div>
+            <div className="footer-brand"><Link className="brand brand-light" href="/"><img className="brand-logo" src={logoDataUri} alt="" width="48" height="46" /><span className="brand-copy">NEXORA<small>INTERNATIONAL TECHNOLOGY</small></span></Link><p>Clear information for domains, hosting and your digital journey.</p><span className="footer-note">Bangladesh · Pre-launch</span></div>
             <div><h3>Explore</h3><Link href="/domain-registration">Domain registration</Link><Link href="/web-hosting">Web hosting</Link><Link href="/vps-hosting">VPS hosting</Link><Link href="/reseller-hosting">Reseller hosting</Link></div>
             <div><h3>Company</h3><Link href="/about">About us</Link><Link href="/contact">Contact</Link><Link href="/terms">Terms of use</Link><Link href="/privacy">Privacy policy</Link><Link href="/refund-policy">Refund policy</Link></div>
             <div className="footer-status"><h3>Service status</h3><p><i /> Website online</p><small>Registration, hosting orders and payment services are not yet available.</small></div>
