@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="announcement"><div className="container announcement-inner"><span>Digital services for your next step online</span><span className="availability"><i /> Pre-launch information site</span></div></div>
         <header className="site-header">
           <div className="container header-inner">
-            <Link className="brand" href="/" aria-label="NEXORA International Technology home"><span className="brand-mark">S</span><span className="brand-copy">SATYAPROBAHO<small>TECHNOLOGIES</small></span></Link>
+            <Link className="brand" href="/" aria-label="NEXORA International Technology home"><img className="brand-logo" src={logoDataUri} alt="" width="48" height="46" /><span className="brand-copy">NEXORA<small>INTERNATIONAL TECHNOLOGY</small></span></Link>
             <nav className="main-nav" aria-label="Main navigation">{nav.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}</nav>
             <Link className="header-cta" href="/contact">Get updates <span>↗</span></Link>
           </div>
