@@ -1,6 +1,6 @@
-# SATYAPROBAHO TECHNOLOGIES — website
+# NEXORA INTERNATIONAL TECHNOLOGY — website
 
-Next.js static-export website for SATYAPROBAHO TECHNOLOGIES.
+Next.js static-export website for NEXORA INTERNATIONAL TECHNOLOGY.
 
 ## Zero-budget operating model (no Singapore VPS)
 
@@ -25,7 +25,7 @@ The selected alternative is to keep the public website on **Cloudflare Pages** a
 
 ## What is NOT available — do not accept orders or payments
 
-- `satyaprobaho.com` is a planned domain; purchase and DNS configuration have not been confirmed.
+- `nexora.com` is a planned domain; purchase and DNS configuration have not been confirmed.
 - No domain registrar/reseller account or registration API is connected.
 - No customer hosting infrastructure, VPS, HestiaCP, customer portal, payment gateway or automated provisioning is implemented.
 - No domain, web-hosting, VPS or reseller product is currently available for fulfillment.
