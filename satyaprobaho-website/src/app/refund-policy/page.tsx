@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Refund Policy",
-  description: "Current payment and refund status for SATYAPROBAHO TECHNOLOGIES.",
+  description: "Current payment and refund status for NEXORA INTERNATIONAL TECHNOLOGY.",
 };
 
 export default function Page() {
@@ -13,7 +13,7 @@ export default function Page() {
       <p>রিফান্ড নীতি</p>
       <div className="content-panel">
         <h2>No payments are currently accepted</h2>
-        <p>SATYAPROBAHO TECHNOLOGIES is currently operating this website as a pre-launch information site. Domain registration, web hosting, VPS provisioning, reseller services and payment processing are not available for purchase through this website.</p>
+        <p>NEXORA INTERNATIONAL TECHNOLOGY is currently operating this website as a pre-launch information site. Domain registration, web hosting, VPS provisioning, reseller services and payment processing are not available for purchase through this website.</p>
         <h2>Do not send money</h2>
         <p>No payment should be sent to any person or account claiming to accept an order on behalf of this pre-launch website. A contact-form submission does not create a paid order.</p>
         <h2>Before commercial launch</h2>
