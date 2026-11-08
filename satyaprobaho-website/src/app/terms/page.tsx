@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
-  description: "Terms for using the SATYAPROBAHO TECHNOLOGIES pre-launch information website.",
+  description: "Terms for using the NEXORA INTERNATIONAL TECHNOLOGY pre-launch information website.",
 };
 
 export default function Page() {
