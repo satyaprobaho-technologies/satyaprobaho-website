@@ -16,9 +16,9 @@ The selected alternative is to keep the public website on **Cloudflare Pages** a
   - https://developers.cloudflare.com/pages/platform/limits/
   - https://developers.cloudflare.com/pages/functions/pricing/
 
-## What is currently available
+## Current brand identity\n\n- Brand: **NEXORA**\n- Full name: **NEXORA INTERNATIONAL TECHNOLOGY**\n- The approved blue globe artwork is used for the website header, footer and browser icon.\n\n## What is currently available
 
-- Public informational pages: home, domain registration, web hosting, VPS hosting, reseller hosting, about, contact, terms, privacy and refund policy.
+- Public informational pages: home, domain registration, web hosting, VPS hosting, reseller hosting, about, contact, FAQ, terms, privacy and refund policy.
 - Free Pages subdomain for the informational website.
 - A Cloudflare Pages Function source file at `functions/api/health.ts` defines a JSON health endpoint at `/api/health`; it becomes live only after a successful Pages deployment that includes the `functions/` directory.
 - Educational content to help visitors understand domains and hosting options.
