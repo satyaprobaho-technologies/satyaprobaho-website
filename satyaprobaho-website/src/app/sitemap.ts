@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/reseller-hosting",
     "/about",
     "/contact",
+    "/faq",
     "/privacy",
     "/terms",
     "/refund-policy",
