@@ -49,7 +49,7 @@ export const onRequestPost = async ({ request, env }: PagesContext): Promise<Res
 
   const email = clean(body.email, 254).toLowerCase();
   const consent = body.consent === true;
-  const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email) || !consent) {
     return json({ ok: false, error: "Enter a valid email address and accept the email subscription consent." }, 400);
   }
