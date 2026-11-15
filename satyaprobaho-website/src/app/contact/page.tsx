@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import InquiryForm from "./InquiryForm";
+import NewsletterSignup from "./NewsletterSignup";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -15,6 +16,7 @@ export default function Page() {
       <p>Our website is currently an information site. Domain registration, web hosting orders, VPS provisioning, reseller services and payment processing are not yet available for purchase.</p>
       <p><strong>Business focus:</strong> Bangladesh</p>
       <InquiryForm />
+      <NewsletterSignup />
       <p className="muted">This form is for pre-launch enquiries only. Do not send payments, passwords, payment-card details or other sensitive information. Submitting an enquiry does not create an order, reserve a domain or guarantee service availability.</p>
     </main>
   );

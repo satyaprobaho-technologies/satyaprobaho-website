@@ -20,6 +20,8 @@ export default function Page() {
         <p>The website is hosted on Cloudflare Pages. Enquiry storage, when enabled, uses Cloudflare D1. Access to stored enquiries should be limited to authorised administrators. No payment processing or customer account service is offered through this website.</p>
         <h2>Retention and questions</h2>
         <p>Enquiries should be retained only for as long as reasonably needed to review and follow up on the request, then securely deleted. A dedicated privacy contact channel and formal retention schedule have not yet been published; these must be established before commercial launch.</p>
+        <h2>Email subscriptions and Brevo</h2>
+        <p>If you use the optional email updates form, your email address is sent securely from the website to Brevo only to initiate a double opt-in confirmation. Your address is not treated as subscribed until you click the confirmation link sent by Brevo. Confirmed subscribers are stored in the selected NEXORA mailing list and may receive occasional product and service updates. You can unsubscribe using the link in any marketing email. The subscription endpoint does not enable individual open or click tracking by default.</p>
         <h2>Policy updates</h2>
         <p>This notice describes the current pre-launch website and may change as services are prepared. Any new analytics, cookies, account features or data uses must be disclosed before they are introduced.</p>
       </div>
